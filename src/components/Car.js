@@ -1,11 +1,23 @@
 import React from 'react';
 
-const Car = () => {
+function Car({ brand }) {
+  const { name, model } = brand;
   return (
     <>
-      <h1> i'm Car Component</h1>
+      <h2>I am a {model}!</h2>
+      <h2>I am a {name}!</h2>
     </>
   );
-};
+}
 
-export default Car;
+function Garage() {
+  const carInfo = { name: 'Ford', model: 'Mustang' };
+  return (
+    <>
+      <h1 className="heading">Who lives in my garage?</h1>
+      <Car brand={carInfo} />
+    </>
+  );
+}
+
+export default Garage;
